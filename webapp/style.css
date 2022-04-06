@@ -1,0 +1,13 @@
+.prompt #greeting {
+  display: none;
+}
+.prompt #login {
+  display: block;
+}
+
+.welcome #greeting {
+  display: block;
+}
+.welcome #login {
+  display: none;
+}
