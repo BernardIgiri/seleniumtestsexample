@@ -6,7 +6,6 @@ Example of E2E test using Selenium
 [First enable Windows subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install)
 
 # Setup
-1. Download [geckodriver](https://github.com/mozilla/geckodriver)
 1. Install prequisits `./setup.sh`
 
 # Run
