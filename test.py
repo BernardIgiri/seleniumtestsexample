@@ -8,20 +8,22 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
 from time import sleep
 
-def test_application():
-    driver_path = abspath("geckodriver")
-    browser = webdriver.Firefox(executable_path=driver_path)
-    try:
-        browser.get('http://localhost:8000/')
-        browser.maximize_window()
-        attempt_login_fail(browser)
-        attempt_login_success(browser)
-    finally:
-        browser.close()
+browser = None
 
-def attempt_login_fail(browser):
+def setup_module(module):
+    global browser
+    browser = webdriver.Firefox(service=Service(executable_path=GeckoDriverManager().install()))
+    browser.get('http://localhost:8000/')
+    browser.maximize_window()
+
+def teardown_module(module):
+    browser.close()
+
+def test_login_fail():
     username_field = browser.find_element(By.CSS_SELECTOR, 'input[name="username"]')
     username_field.clear()
     username_field.send_keys("unauthorized");
@@ -34,7 +36,7 @@ def attempt_login_fail(browser):
     assert browser.find_element(By.ID,"login").is_displayed()
     assert not browser.find_element(By.ID,"greeting").is_displayed()
 
-def attempt_login_success(browser):
+def test_login_success():
     username_field = browser.find_element(By.CSS_SELECTOR, 'input[name="username"]')
     username_field.clear()
     username_field.send_keys("unauthorized");

@@ -8,3 +8,4 @@ sleep 3
 pytest test.py --verbose --capture=no
 # kill server
 kill $PID
+echo 'Test completed!'
