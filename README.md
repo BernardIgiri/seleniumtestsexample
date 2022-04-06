@@ -9,6 +9,9 @@ Example of E2E test using Selenium
 # Run
 `./run_test.sh`
 
+# Run server
+`./run_server.sh`
+
 # Source Tutorial
 
 This example was pulled from the following tutorial

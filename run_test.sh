@@ -1,3 +1,10 @@
 #!/bin/bash
-python3 -m http.server webapp &;
-pytest test.py --verbose --capture=no;
+# start application server
+python3 -m http.server --directory webapp &
+PID=$!
+# wait for server to start
+sleep 3
+# run test
+pytest test.py --verbose --capture=no
+# kill server
+kill $PID
