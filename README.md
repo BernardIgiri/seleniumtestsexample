@@ -8,7 +8,7 @@ Example of E2E test using Selenium
 # Setup
 1. [Install Python](https://www.python.org/downloads/)
   (Note: Linux users may already have it installed)
-1. Install prequisits `./setup.sh`
+1. Install prequisits `pip install -r requirements.txt`
 
 # Run
 `./run_test.sh`
