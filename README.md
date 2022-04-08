@@ -18,3 +18,5 @@ Example of E2E test using Selenium
 
 ## Run server
 `./run_server.sh`
+
+Open: http://localhost:8282

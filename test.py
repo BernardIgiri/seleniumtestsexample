@@ -17,7 +17,7 @@ browser = None
 def setup_module(module):
     global browser
     browser = webdriver.Firefox(service=Service(executable_path=GeckoDriverManager().install()))
-    browser.get('http://localhost:8000/')
+    browser.get('http://localhost:8282/')
     browser.maximize_window()
 
 def teardown_module(module):

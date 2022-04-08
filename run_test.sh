@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 # start application server
-python3 -m http.server --directory webapp &
+python3 -m http.server --directory webapp 8282 &
 PID=$!
 # wait for server to start
 sleep 3
