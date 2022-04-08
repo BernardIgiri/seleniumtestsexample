@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # start application server
 python3 -m http.server --directory webapp &
 PID=$!
